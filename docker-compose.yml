@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  filebot:
+    image: jlesage/filebot:latest
+    container_name: filebot
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - /volume2/docker/filebot:/config:rw
+      - "$HOME:/storage:rw"
+      - /volume1/media/downloads:/watch:rw
+      - /volume1/media/plex_medias:/output:rw`
+      
